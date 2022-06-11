@@ -7,21 +7,21 @@ class Solution {
         
         int[] ans = new int[2];
         
-        Map<Integer, Integer> mp = new HashMap<>();
+        Map<Integer, Integer> mp = new HashMap<>(); // creating map 
         
         int size = arr.length;
 
         for (int i = 0; i < size; i++){
             
-            int num1 = arr[i];
+            int num1 = arr[i];                     
             
-            if(mp.isEmpty())
+            if(mp.isEmpty())                   // checking to put the first element
             {
                 mp.put(num1,i);
                 continue;
             }
 
-            int num2 = target - num1;
+            int num2 = target - num1;        // subtract num1 from target and then check it in the map if it is present in map put it in the ans array and return 
 
             if (mp.containsKey(num2))
             {
@@ -29,7 +29,7 @@ class Solution {
                 ans[1] = i;
                 return ans;
             }
-            mp.put(num1,i);
+            mp.put(num1,i);                 // else put the new value in the map and repeat the process 
         }
         return null;                                     
     }
