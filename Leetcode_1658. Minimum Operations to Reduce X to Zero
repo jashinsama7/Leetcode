@@ -23,9 +23,10 @@ class Solution {
         {
             pfSum += nums[i];
             if (mp.containsKey(pfSum - rem)) {
-					max = Math.max(max,(i - mp.get(pfSum-rem)));
-				}
-				mp.put(pfSum, i);
+		        max = Math.max(max,(i - mp.get(pfSum-rem)));
+	          }
+	    
+	           mp.put(pfSum, i);
             
         }
         return max==-1 ? -1 : nums.length-max;
